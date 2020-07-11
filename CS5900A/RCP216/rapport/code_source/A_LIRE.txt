@@ -1,0 +1,39 @@
+﻿--------------------------------
+VERSIONS LOGICIELLES
+--------------------------------
+
+Ce projet a été développé et testé avec :
+
+- Spark 2.3.2
+- Scala 2.11.8
+- Java oracle 8
+
+--------------------------------
+INSTALLATION
+--------------------------------
+- créer un répertoire de travail
+- copier dans le répertoire de travail les fichiers *.scala
+  et le répertoire deps
+- télécharger et copier à la racine du répertoire de travail le fichier
+   http://cedric.cnam.fr/~ferecatu/RCP216/tp/tptexte/lsa.jar
+- créer le sous-répertoires "data" à la racine du répertoire de travail
+- copier et décompresser dans "data" l'archive 
+  http://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz   
+  
+  
+--------------------------------
+EXECUTION
+--------------------------------
+Ouvrir une fenêtre de terminal et démarrer spark-shell :
+spark-shell --driver-memory 6g --jars lsa.jar
+
+puis exécuter dans l'ordre :
+
+:load 00_preprocess_data.scala
+:load 01_build_word2vec_model.scala
+:load 02_build_word2vec_datasets.scala
+:load 03_build_tfidf_datasets.scala
+:load 04_pca.scala
+:load 05_svm_train.scala
+:load 06_svm_test.scala
+  
